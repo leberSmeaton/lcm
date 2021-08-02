@@ -4,15 +4,16 @@
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
   <div class="form-inputs">
-    <%= f.association :user %>
-    <%= f.association :category %>
+    <%# <%= f.association :user %> 
+    <%# <%= f.association :category, as: :select, @categories.map {|c| [c.category_name, c.id]} %>
+    <%= f.association :category, collection: @categories.map {|c| [c.category_name, c.id]}, prompt: "Choose Category" %>
     <%= f.input :product_name %>
     <%= f.input :product_description %>
     <%= f.input :product_price %>
-    <%= f.input :product_stock %>
-  </div>
+    <%# <%= f.input :product_stock %>
+  </div><br />
 
   <div class="form-actions">
     <%= f.button :submit %>
-  </div>
+  </div><br />
 <% end %>

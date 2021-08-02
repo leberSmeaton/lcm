@@ -1,5 +1,8 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_categories, only: [:new, :edit]
+
 
   # GET /products or /products.json
   def index
@@ -21,7 +24,7 @@ class ProductsController < ApplicationController
 
   # POST /products or /products.json
   def create
-    @product = Product.new(product_params)
+    @product = current_user.products.new(product_params)
 
     respond_to do |format|
       if @product.save
@@ -65,5 +68,11 @@ class ProductsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def product_params
       params.require(:product).permit(:user_id, :category_id, :product_name, :product_description, :product_price, :product_stock)
+    end
+
+    def set_categories
+      @categories = Category.all
+      # this find params doesn't work, gets can't find params id
+      # @categories = Category.find(params[:id])
     end
 end
