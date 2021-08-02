@@ -3,6 +3,18 @@
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
 
+<!-- Full Name
+  <div class="field">
+    <%= f.label :fullname %><br />
+    <%= f.text_field :fullname, autofocus: true %>
+  </div>
+ -->
+
+  <div class="field">
+    <%= f.label :username %><br />
+    <%= f.text_field :username, autofocus: true %>
+  </div>
+
   <div class="field">
     <%= f.label :email %><br />
     <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
@@ -19,7 +31,33 @@
   <div class="field">
     <%= f.label :password_confirmation %><br />
     <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div><br />
+
+<!-- address 
+  <div class="field">
+    <%= f.label :address_street %><br />
+    <%= f.text_field :address_street, autofocus: true %>
   </div>
+  <div class="field">
+    <%= f.label :address_state %><br />
+    <%= f.text_field :address_state, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :address_country %><br />
+    <%= f.text_field :address_country, autofocus: true %>
+  </div>
+  <div class="field">
+    <%= f.label :address_postcode %><br />
+    <%= f.text_field :address_postcode, autofocus: true %>
+  </div>
+-->
+
+<!-- 
+  <div class="field">
+    <%= f.label :profile_info %><br />
+    <%= f.text_field :profile_info, autofocus: true %>
+  </div>
+-->
 
   <div class="actions">
     <%= f.submit "Sign up" %>
