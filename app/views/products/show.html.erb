@@ -27,7 +27,11 @@
 
 <p>
   <strong>Product stock:</strong>
-  <%= @product.product_stock %>
+  <% if @product.product_stock == false %>
+    Available
+    <% else %>
+    Unavailable
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_product_path(@product) %> |

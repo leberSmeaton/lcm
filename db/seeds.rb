@@ -23,5 +23,33 @@ if Category.count == 0
 end
 
 if User.count == 0 
-    User.create(username:"Abby Bob", email:"abbybob@test.com", password:"password", password_confirmation:"password")
+    5.times do |i|
+        User.create(
+            fullname: Faker::Name.name,
+            username: Faker::Internet.user_name,
+            email: Faker::Internet.email,
+            profile_info: Faker::Hipster.sentence
+            # password: ,
+            # password_confirmation:
+        )
+        Address.create(
+            user_id: i + 1,
+            address_street: Faker::Address.street_address,
+            address_state: Faker::Address.state,
+            address_country: Faker::Address.country,
+            address_postcode: Faker::Address.postcode
+        )
+        puts "Created #{i + 1} User"
+    end
+end
+
+if Product.count == 0 
+    10.times do |i|
+        Product.create(
+            product_name: Faker::Commerce.product_name,
+            product_description: Faker::Commerce.department,
+            product_price: Faker::Commerce.price,
+            product_stock: false
+        )
+    end
 end
