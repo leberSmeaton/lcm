@@ -4,25 +4,29 @@ class ProductsController < ApplicationController
   before_action :set_categories, only: [:new, :edit]
 
 
-  # GET /products or /products.json
+  # GET /products page that lists all products
+  # explicitly renders the products index.html.erb file in products views folder
   def index
     @products = Product.all
+    # we will loop through every product and its attributes in index.html.erb 
   end
 
-  # GET /products/1 or /products/1.json
+  # GET /products/1 renders show.html.erb that shows individual products
   def show
   end
 
-  # GET /products/new
+  # GET /products/new page that allows creation of individual product
+  # explicitly renders the products new.html.erb file in products views folder
   def new
     @product = Product.new
   end
 
-  # GET /products/1/edit
+  # GET /products/1/edit page that allows edit of an individual product
+  # explicitly renders the products edit.html.erb file in products views folder
   def edit
   end
 
-  # POST /products or /products.json
+  # POST /products does not render a page
   def create
     @product = current_user.products.new(product_params)
 
@@ -37,7 +41,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1 or /products/1.json
+  # PATCH/PUT /products/1 does not render a page
   def update
     respond_to do |format|
       if @product.update(product_params)
@@ -50,7 +54,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  # DELETE /products/1 or /products/1.json
+  # DELETE /products/1 does not render a page
   def destroy
     @product.destroy
     respond_to do |format|

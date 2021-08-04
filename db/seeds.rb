@@ -6,21 +6,21 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-categories = [
-    {category_name:"Collage"},
-    {category_name:"Dance"},
-    {category_name:"Woodwork"},
-    {category_name:"Performance"},
-    {category_name:"Pottery"},
-    {category_name:"Trivia"}
-]
+# categories = [
+#     {category_name:"Collage"},
+#     {category_name:"Dance"},
+#     {category_name:"Woodwork"},
+#     {category_name:"Performance"},
+#     {category_name:"Pottery"},
+#     {category_name:"Trivia"}
+# ]
 
-if Category.count == 0
-    categories.each do |category|
-        Category.create(category_name: category[:category_name])
-        puts "Created #{category[:category_name]} category"
-    end
-end
+# if Category.count == 0
+#     categories.each do |category|
+#         Category.create(category_name: category[:category_name])
+#         puts "Created #{category[:category_name]} category"
+#     end
+# end
 
 if User.count == 0 
     5.times do |i|
@@ -39,16 +39,16 @@ if User.count == 0
             address_country: Faker::Address.country,
             address_postcode: Faker::Address.postcode
         )
-        puts "Created #{i + 1} User"
     end
 end
 
 if Product.count == 0 
     10.times do |i|
-        Product.create(
+        Product.new(
             product_name: Faker::Commerce.product_name,
             product_description: Faker::Commerce.department,
             product_price: Faker::Commerce.price,
+            # category_id: ??
             product_stock: false
         )
     end
