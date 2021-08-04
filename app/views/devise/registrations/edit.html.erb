@@ -58,22 +58,24 @@
 
     <br/>
     <h6>Address</h6>
-    <div class="field">
-      <%= form.label :street %>
-      <%= form.text_field :address_street, autofocus: true %>
-    </div>
-    <div class="field">
-      <%= form.label :state %>
-      <%= form.text_field :address_state, autofocus: true %>
-    </div>
-    <div class="field">
-      <%= form.label :country %>
-      <%= form.text_field :address_country, autofocus: true %>
-    </div>
-    <div class="field">
-      <%= form.label :postcode %>
-      <%= form.text_field :address_postcode, autofocus: true %>
-    </div>
+    <%= form.fields_for :addresses do |addresses_form| %>
+      <div class="field">
+        <%= addresses_form.label :address_street %>
+        <%= addresses_form.text_field :address_street, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= addresses_form.label :address_state %>
+        <%= addresses_form.text_field :address_state, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= addresses_form.label :address_country %>
+        <%= addresses_form.text_field :address_country, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= addresses_form.label :address_postcode %>
+        <%= addresses_form.text_field :address_postcode, autofocus: true %>
+      </div>
+    <% end %>
 
     <div class="actions">
       <%= form.submit "Update" %>
