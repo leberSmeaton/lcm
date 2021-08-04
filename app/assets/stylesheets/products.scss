@@ -1,3 +1,40 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+div.field,
+div.actions {
+  margin-bottom: 10px;
+}
+
+label {
+  padding: 5px;
+  margin: 0;
+  font-size: small;
+}
+
+em,
+i {
+  padding: 0 0 0 5px;
+  margin: 0;
+  font-size: small;
+}
+
+input,
+textarea,
+select {
+  background-color: transparent;
+  border-radius: 3px;
+  border: 1px solid black;
+  padding-left: 5px;
+}
+
+input.btn {
+  background-color: transparent;
+  padding: 0;
+  border: none;
+  &:hover {
+    // color: #fff;
+    background-color: greenyellow;
+  }
+}

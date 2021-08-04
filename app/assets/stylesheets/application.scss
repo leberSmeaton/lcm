@@ -20,7 +20,9 @@ body {
   color: slategray;
 }
 
-h2 {
+h2,
+h5,
+p {
   padding-left: 15px;
 }
 
@@ -63,23 +65,35 @@ main {
 
 .footernavs {
   display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-end;
-  align-items: flex-end;
-  margin: 10px 5px 0 5px;
+  flex-flow: column wrap;
+  // justify-content: flex-end;
+  // align-items: flex-end;
+  margin: 100px 5px 0 5px;
   border-top: 1px solid greenyellow;
   ul {
     padding: 0;
     display: flex;
     justify-content: flex-end;
     margin: 0;
+    li {
+      display: inline;
+      margin: 0 5px;
+      font-weight: bold;
+      a {
+        color: slategrey;
+      }
+    }
   }
-  li {
-    display: inline;
-    margin: 0 5px;
-    font-weight: bold;
-    a {
-      color: slategrey;
+  .footerproductimages {
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: space-between;
+    // align-items: center;
+    div {
+      margin: 10px;
+      width: 100px;
+      height: 100px;
+      background-color: lightgrey;
     }
   }
 }
