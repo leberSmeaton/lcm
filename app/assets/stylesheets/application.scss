@@ -63,6 +63,12 @@ main {
   background-color: honeydew;
 }
 
+.mainform {
+  display: flex;
+  flex-direction: column;
+  max-width: 350px;
+}
+
 .footernavs {
   display: flex;
   flex-flow: column wrap;
