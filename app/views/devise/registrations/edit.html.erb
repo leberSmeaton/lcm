@@ -2,7 +2,7 @@
 <h2><%= @user.fullname %>'s Profile Edit</h2>
 
 <main>
-  <%= form_with model: @user, url: "/users", method: :patch do |form| %>
+  <%= form_with model: @user, url: "/users", method: :patch, local:true do |form| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <h6>Profile</h6>
@@ -58,7 +58,7 @@
 
     <br/>
     <h6>Address</h6>
-    <%= form.fields_for :addresses do |addresses_form| %>
+    <%= form.fields_for :address, @user.address do |addresses_form| %>
       <div class="field">
         <%= addresses_form.label :address_street %>
         <%= addresses_form.text_field :address_street, autofocus: true %>
