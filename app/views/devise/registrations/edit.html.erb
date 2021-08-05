@@ -2,29 +2,29 @@
 <h2><%= @user.fullname %>'s Profile Edit</h2>
 
 <main>
-  <%= form_with model: @user, url: "/users", method: :patch, local:true do |form| %>
+  <%= nested_form_for([resource_name, resource.with_address], url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
     <h6>Profile</h6>
 
     <div class="form-inputs field">
-      <%= form.label :fullname %>
-      <%= form.text_field :fullname, autofocus: true %>
+      <%= f.label :fullname %>
+      <%= f.text_field :fullname, autofocus: true %>
     </div>
 
     <div class="field">
-      <%= form.label :username %>
-      <%= form.text_field :username, autofocus: true %>
+      <%= f.label :username %>
+      <%= f.text_field :username, autofocus: true %>
     </div>
 
     <div class="field">
-      <%= form.label :email %>
-      <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
     <div class="field">
-      <%= form.label :profile_info %>
-      <%= form.text_area :profile_info, autofocus: true %>
+      <%= f.label :profile_info %>
+      <%= f.text_area :profile_info, autofocus: true %>
     </div>
 
     <br/>
@@ -36,8 +36,8 @@
     <% end %>
 
     <div class="field">
-      <%= form.label :password %>
-      <%= form.password_field :password, autocomplete: "new-password" %>
+      <%= f.label :password %>
+      <%= f.password_field :password, autocomplete: "new-password" %>
       <% if @minimum_password_length %>
         <br />
         <em><%= @minimum_password_length %> characters minimum</em>
@@ -46,39 +46,39 @@
     </div>
 
     <div class="field">
-      <%= form.label :password_confirmation %>
-      <%= form.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div>
 
     <div class="field">
-      <%= form.label :current_password %> 
-      <%= form.password_field :current_password, autocomplete: "current-password" %><br/>
+      <%= f.label :current_password %> 
+      <%= f.password_field :current_password, autocomplete: "current-password" %><br/>
       <i>(we need your current password to confirm your changes)</i>
     </div>
 
     <br/>
     <h6>Address</h6>
-    <%= form.fields_for :address, @user.address do |addresses_form| %>
+    <%= f.fields_for :address do |address_form| %>
       <div class="field">
-        <%= addresses_form.label :address_street %>
-        <%= addresses_form.text_field :address_street, autofocus: true %>
+        <%= address_form.label :address_street %>
+        <%= address_form.text_field :address_street, autofocus: true %>
       </div>
       <div class="field">
-        <%= addresses_form.label :address_state %>
-        <%= addresses_form.text_field :address_state, autofocus: true %>
+        <%= address_form.label :address_state %>
+        <%= address_form.text_field :address_state, autofocus: true %>
       </div>
       <div class="field">
-        <%= addresses_form.label :address_country %>
-        <%= addresses_form.text_field :address_country, autofocus: true %>
+        <%= address_form.label :address_country %>
+        <%= address_form.text_field :address_country, autofocus: true %>
       </div>
       <div class="field">
-        <%= addresses_form.label :address_postcode %>
-        <%= addresses_form.text_field :address_postcode, autofocus: true %>
+        <%= address_form.label :address_postcode %>
+        <%= address_form.text_field :address_postcode, autofocus: true %>
       </div>
     <% end %>
 
     <div class="actions">
-      <%= form.submit "Update" %>
+      <%= f.submit "Update" %>
     </div>
   <% end %>
   <%= link_to "Back to Home", :back %>

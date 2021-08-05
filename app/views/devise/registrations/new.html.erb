@@ -2,63 +2,67 @@
 <h2>Sign up</h2>
 
 <main>
-  <%= form_with model: User.new do |form| %>
+  <%= nested_form_for([resource_name, resource.with_address], url: registration_path(resource_name)) do |f| %>
     <%= render "devise/shared/error_messages", resource: resource %>
 
+    <h6>Profile</h6>
     <div class="field">
-      <%= form.label :fullname %><br />
-      <%= form.text_field :fullname, autofocus: true %>
+      <%= f.label :fullname %>
+      <%= f.text_field :fullname, autofocus: true %>
     </div>
 
     <div class="field">
-      <%= form.label :username %><br />
-      <%= form.text_field :username, autofocus: true %>
+      <%= f.label :username %>
+      <%= f.text_field :username, autofocus: true %>
     </div>
 
     <div class="field">
-      <%= form.label :email %><br />
-      <%= form.email_field :email, autofocus: true, autocomplete: "email" %>
+      <%= f.label :email %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
     </div>
 
     <div class="field">
-      <%= form.label :password %>
+      <%= f.label :profile_info %>
+      <%= f.text_field :profile_info, autofocus: true %>
+    </div>
+
+    <br/>
+    <h6>Password</h6>
+    <div class="field">
+      <%= f.label :password %>
       <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
-      <% end %><br />
-      <%= form.password_field :password, autocomplete: "new-password" %>
+      <% end %>
+      <%= f.password_field :password, autocomplete: "new-password" %><em>(<%= @minimum_password_length %> characters minimum)</em>
     </div>
 
     <div class="field">
-      <%= form.label :password_confirmation %><br />
-      <%= form.password_field :password_confirmation, autocomplete: "new-password" %>
+      <%= f.label :password_confirmation %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
     </div><br />
 
-    <%= form.fields_for :address, @user.address do |addresses_form| %>
+    <br/>
+    <h6>Address</h6>
+    <%= f.fields_for :address do |address_form| %>
       <div class="field">
-        <%= addresses_form.label :address_street %>
-        <%= addresses_form.text_field :address_street, autofocus: true %>
+        <%= address_form.label :address_street %>
+        <%= address_form.text_field :address_street, autofocus: true %>
       </div>
       <div class="field">
-        <%= addresses_form.label :address_state %>
-        <%= addresses_form.text_field :address_state, autofocus: true %>
+        <%= address_form.label :address_state %>
+        <%= address_form.text_field :address_state, autofocus: true %>
       </div>
       <div class="field">
-        <%= addresses_form.label :address_country %>
-        <%= addresses_form.text_field :address_country, autofocus: true %>
+        <%= address_form.label :address_country %>
+        <%= address_form.text_field :address_country, autofocus: true %>
       </div>
       <div class="field">
-        <%= addresses_form.label :address_postcode %>
-        <%= addresses_form.text_field :address_postcode, autofocus: true %>
+        <%= address_form.label :address_postcode %>
+        <%= address_form.text_field :address_postcode, autofocus: true %>
       </div>
     <% end %>
 
-    <div class="field">
-      <%= form.label :profile_info %>
-      <%= form.text_field :profile_info, autofocus: true %>
-    </div>
-
     <div class="actions">
-      <%= form.submit "Sign up" %>
+      <%= f.submit "Sign up" %>
     </div>
   <% end %>
 

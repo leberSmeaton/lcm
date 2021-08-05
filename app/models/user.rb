@@ -8,5 +8,11 @@ class User < ApplicationRecord
   has_one :address, dependent: :destroy
   has_many :transactions
 
-  accepts_nested_attributes_for :addresses
+  accepts_nested_attributes_for :address
+
+  def with_address
+    build_address if address.nil?
+    self
+  end
+
 end
