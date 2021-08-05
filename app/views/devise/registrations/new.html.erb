@@ -33,22 +33,24 @@
       <%= form.password_field :password_confirmation, autocomplete: "new-password" %>
     </div><br />
 
-    <div class="field">
-      <%= form.label :address_street %>
-      <%= form.text_field :address_street, autofocus: true %>
-    </div>
-    <div class="field">
-      <%= form.label :address_state %>
-      <%= form.text_field :address_state, autofocus: true %>
-    </div>
-    <div class="field">
-      <%= form.label :address_country %>
-      <%= form.text_field :address_country, autofocus: true %>
-    </div>
-    <div class="field">
-      <%= form.label :address_postcode %>
-      <%= form.text_field :address_postcode, autofocus: true %>
-    </div>
+    <%= form.fields_for :address, @user.address do |addresses_form| %>
+      <div class="field">
+        <%= addresses_form.label :address_street %>
+        <%= addresses_form.text_field :address_street, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= addresses_form.label :address_state %>
+        <%= addresses_form.text_field :address_state, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= addresses_form.label :address_country %>
+        <%= addresses_form.text_field :address_country, autofocus: true %>
+      </div>
+      <div class="field">
+        <%= addresses_form.label :address_postcode %>
+        <%= addresses_form.text_field :address_postcode, autofocus: true %>
+      </div>
+    <% end %>
 
     <div class="field">
       <%= form.label :profile_info %>
