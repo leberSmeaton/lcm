@@ -38,3 +38,12 @@ input.btn {
     background-color: greenyellow;
   }
 }
+
+.imageholder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.productlisting {
+  background-color: pink;
+}

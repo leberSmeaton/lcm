@@ -6,14 +6,15 @@
   <div class="form-inputs field">
     <%# <%= f.association :user %> 
     <%# <%= f.association :category, as: :select, @categories.map {|c| [c.category_name, c.id]} %>
-    <%= f.association :category, collection: @categories.map {|c| [c.category_name, c.id]}, prompt: "Choose Category" %>
+    <%= f.association :category, collection: @categories.map {|c| [c.category_name, c.id]} %>
     <%= f.input :product_name %>
     <%= f.input :product_description %>
     <%= f.input :product_price %>
-    <%# <%= f.input :product_stock %>
+    <%= f.input :product_stock, as: :radio_buttons, label: "Product in stock?" %>
   </div><br />
 
-  <div class="form-actions">
-    <%= f.button :submit %>
+
+  <div>
+    <%= f.button :submit, :class=>'specialbtn' %>
   </div><br />
 <% end %>

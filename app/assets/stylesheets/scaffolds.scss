@@ -7,14 +7,13 @@ body {
 body,
 p,
 ol,
-ul,
-td {
+ul {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
 }
 
-td.image {
+div.image {
   margin: 10px;
   width: 100px;
   height: 100px;
@@ -42,10 +41,6 @@ a.back {
 
 a.specialbtn {
   text-decoration: underline;
-}
-
-th {
-  padding-bottom: 5px;
 }
 
 td {

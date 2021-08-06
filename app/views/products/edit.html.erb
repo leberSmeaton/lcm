@@ -1,9 +1,10 @@
-<p></p>
+<br />
 <h2>Edit <%= @product.product_name %></h2>
 <main>
-    <%= render 'form', product: @product %>
+  <%= render 'form', product: @product %>
 
-    <%= link_to 'Show', @product %> |
-    <%= link_to 'Back', products_path %>
-
+  <h6>
+    <%= link_to "See #{@product.product_name}", @product %><br />
+    <%= link_to 'Back to ALL Products', products_path %>
+  </h6>
 </main>

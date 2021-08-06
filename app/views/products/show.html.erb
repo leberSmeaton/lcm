@@ -1,42 +1,27 @@
-<p id="notice"><%= notice %></p>
-
+<br />
 <h2><%= @product.product_name %></h2>
-
 <main>
-  <!-- <p>
-    <strong>User:</strong>
-    <%= @product.user_id %>
-  </p> -->
-
-  <p>
-    <strong>Category:</strong>
-    <%= @product.category_id %>
-  </p>
-
-  <p>
-    <strong>Product name:</strong>
-    <%= @product.product_name %>
-  </p>
-
-  <p>
-    <strong>Product description:</strong>
-    <%= @product.product_description %>
-  </p>
-
-  <p>
-    <strong>Product price:</strong>
-    <%= @product.product_price %>
-  </p>
-
-  <p>
-    <strong>Product stock:</strong>
-    <% if @product.product_stock == false %>
-      Available
-      <% else %>
-      Unavailable
-    <% end %>
-  </p>
-
-  <%= link_to 'Edit', edit_product_path(@product) %> |
-  <%= link_to 'Back', products_path %>
+  <section>
+    Image to be on the left to be removed when image has been found
+  </section>
+  <section>
+    <h5>
+      <strong><%= @product.product_name %></strong> | <%= @product.category.category_name %><br /><br />
+      <%= @product.product_description %><br /><br />
+      <% if @product.product_stock == true %>
+        Unavailable
+        <% else %>
+        Available
+      <% end %><br />
+      <strong>$ <%= @product.product_price %></strong>
+    </h5>
+    <br />
+    <h6>
+      <% if user_signed_in? %>
+        <%= link_to "Edit #{@product.product_name}", edit_product_path(@product), :class=>'back' %>
+      <% end %>
+      <br />
+      <%= link_to 'Back to ALL Products', products_path, :class=>'back' %>
+    </h6>
+  </section>
 </main>
