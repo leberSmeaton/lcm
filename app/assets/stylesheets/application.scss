@@ -46,14 +46,14 @@ p {
   }
   li {
     display: inline;
-    margin: 0 5px;
-    font-weight: bold;
+    margin: 0 10px;
+    font-weight: normal;
     a {
       color: slategrey;
+      &:hover {
+        color: #007bff;
+      }
     }
-  }
-  li.city {
-    margin: 0 25px 0 25px;
   }
 }
 
@@ -83,10 +83,13 @@ main {
     margin: 0;
     li {
       display: inline;
-      margin: 0 5px;
-      font-weight: bold;
+      margin: 0 10px;
+      font-weight: normal;
       a {
-        color: slategrey;
+        color: slategray;
+        &:hover {
+          color: #007bff;
+        }
       }
     }
   }
