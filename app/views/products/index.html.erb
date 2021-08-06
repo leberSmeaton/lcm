@@ -4,28 +4,26 @@
 
 <main>
   <section class="imageholder">
-    <div>
-      <% @products.each do |product| %>
-        <div class='productlisting'>
-          <div class="image">
-            <%= product.category.category_name %>
-          </div>
-          
-          <%= link_to "#{product.product_name}", product %><br />
-          $ <%= product.product_price %>
-          
-          <br />
-
-          <span>
-            <% if user_signed_in? %>
-              <%= link_to 'Show', product %> | 
-              <%= link_to 'Edit', edit_product_path(product) %> | 
-              <%= link_to 'Delete Product', product, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </span>
+    <% @products.each do |product| %>
+      <div class='productlisting'>
+        <div class="image">
+          <%= product.category.category_name %>
         </div>
-      <% end %>
-    </div>
+        
+        <%= link_to "#{product.product_name}", product %><br />
+        $ <%= product.product_price %>
+        
+        <br />
+
+        <span>
+          <% if user_signed_in? %>
+            <%= link_to 'Show', product %> | 
+            <%= link_to 'Edit', edit_product_path(product) %> | 
+            <%= link_to 'Delete Product', product, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <% end %>
+        </span>
+      </div>
+    <% end %>
   </section>
 
   <br /><br /><br />

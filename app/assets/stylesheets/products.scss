@@ -46,4 +46,12 @@ input.btn {
 }
 .productlisting {
   background-color: pink;
+  text-align: center;
+  margin: 15px 15px;
+  .image {
+    margin: 10px;
+    width: 200px;
+    height: 250px;
+    background-color: lightgrey;
+  }
 }
