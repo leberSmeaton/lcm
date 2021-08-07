@@ -1,6 +1,6 @@
 body {
-  background-color: #fff;
-  color: #333;
+  // background-color: #fff;
+  // color: #333;
   margin: 33px;
 }
 
@@ -20,16 +20,15 @@ pre {
 }
 a {
   color: slategray;
+  text-decoration: underline;
 }
-// a:visited {
-//   color: slategray;
-// }
-
+a:visited {
+  color: slategray;
+}
 a:hover {
   color: #fff;
   background-color: greenyellow;
 }
-
 a.back {
   text-decoration: underline;
 }

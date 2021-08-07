@@ -1,10 +1,10 @@
 <br />
 <h2><%= @product.product_name %></h2>
-<main>
+<main id="show">
   <section>
     <%= image_tag @product.product_image, class:"productimage" if @product.product_image.attached? %>
   </section>
-  <section>
+  <section class="productinfo">
     <h5>
       <strong><%= @product.product_name %></strong> | <%= @product.category.category_name %><br /><br />
       <%= @product.product_description %><br /><br />
@@ -16,7 +16,7 @@
       <strong>$ <%= @product.product_price %></strong>
     </h5>
     <br />
-    <h6>
+    <h6 class="productnav">
       <% if user_signed_in? %>
         <%= link_to "Edit #{@product.product_name}", edit_product_path(@product), :class=>'back' %>
       <% end %>
