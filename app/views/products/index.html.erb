@@ -8,7 +8,7 @@
       <div class='productlisting'>
         <div class="productimagecontainer">
           <%= product.category.category_name %>
-          <%= image_tag product.product_image, class:"smallproductimage" if product.product_image.attached? %>
+          <%= image_tag image_select(product), class:"smallproductimage" %>
         </div>
         
         <%= link_to "#{product.product_name}", product %><br />

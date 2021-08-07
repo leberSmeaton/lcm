@@ -2,7 +2,7 @@
 <h2><%= @product.product_name %></h2>
 <main id="show">
   <section>
-    <%= image_tag @product.product_image, class:"productimage" if @product.product_image.attached? %>
+    <%= image_tag image_select(@product), class:"productimage" %>
   </section>
   <section class="productinfo">
     <h5>
