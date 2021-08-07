@@ -1,18 +1,23 @@
 <br/>
 <h2>Create that side hustle!</h2>
 <main id="home">
-    <section class="image">
-        Image to be removed when image has been found
-    </section>
-    <section>
-        <h2>A marketplace for lockdown experiences.<br/>
-        By artists, for lovers of art.
-        </h2>
-        <h5>
-            Lockdown Creatives is a Marketplace that aims to support artists, creatives and performers in lockdown by offering a new revenue stream.
-        </h5>
-        <div class="landing-buttons">
-        <button><%= link_to "SIGN UP", new_user_registration_path %></button><button><%= link_to "SHOP NOW", products_path %></button>
-        </div>
-    </section>
+  <section>
+    <%= image_tag "heroimage.jpg", alt:"flowers, markers and creative note book full of art.", :class=>"image" %>
+  </section>
+  <article>
+    <h2>A marketplace for lockdown experiences.<br/>
+    By artists, for lovers of art.
+    </h2>
+    <h5>
+      Lockdown Creatives is a Marketplace that aims to support artists, creatives and performers in lockdown by offering a new revenue stream.
+    </h5>
+    <div class="landing-buttons">
+    <button>
+      <%= link_to "SIGN UP", new_user_registration_path %>
+    </button>
+    <button>
+        <%= link_to "SHOP NOW", products_path %>
+      </button>
+    </div>
+  </article>
 </main>

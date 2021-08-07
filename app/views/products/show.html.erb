@@ -3,15 +3,16 @@
 <main>
   <section>
     Image to be on the left to be removed when image has been found
+    <%#= image_tag @product.product_image, class:"productimage" if @product.product_image.attached? %>
   </section>
   <section>
     <h5>
       <strong><%= @product.product_name %></strong> | <%= @product.category.category_name %><br /><br />
       <%= @product.product_description %><br /><br />
       <% if @product.product_stock == true %>
-        Unavailable
-        <% else %>
         Available
+        <% else %>
+        Unavailable
       <% end %><br />
       <strong>$ <%= @product.product_price %></strong>
     </h5>
