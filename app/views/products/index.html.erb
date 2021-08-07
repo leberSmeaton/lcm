@@ -6,8 +6,9 @@
   <section class="imageholder">
     <% @products.each do |product| %>
       <div class='productlisting'>
-        <div class="image">
+        <div class="productimagecontainer">
           <%= product.category.category_name %>
+          <%= image_tag product.product_image, class:"smallproductimage" if product.product_image.attached? %>
         </div>
         
         <%= link_to "#{product.product_name}", product %><br />

@@ -2,8 +2,7 @@
 <h2><%= @product.product_name %></h2>
 <main>
   <section>
-    Image to be on the left to be removed when image has been found
-    <%#= image_tag @product.product_image, class:"productimage" if @product.product_image.attached? %>
+    <%= image_tag @product.product_image, class:"productimage" if @product.product_image.attached? %>
   </section>
   <section>
     <h5>

@@ -39,17 +39,33 @@ input.btn {
   }
 }
 
-.imageholder {
+section.imageholder {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
 }
-.productlisting {
-  border: 1px solid greenyellow;
+
+div.productlisting {
+  border: none;
+  border-radius: 20px 0 0 0;
+  background-color: lightyellow;
   text-align: center;
   margin: 15px 15px;
-  .image {
+  div.productimagecontainer {
     margin: 10px;
-    background-color: lightgrey;
+    // background-color: lightgrey;
+    display: flex;
+    justify-content: center;
+    flex-flow: column wrap;
+    align-items: center;
+
+    .smallproductimage {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+    }
+    .categoryname {
+      position: absolute;
+    }
   }
 }
