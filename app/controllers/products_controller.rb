@@ -12,7 +12,27 @@ class ProductsController < ApplicationController
   end
 
   # GET /products/1 renders show.html.erb that shows individual products
+  # creating payment intent, showing our Stripe gem payment option when we render the page for each product
   def show
+    session = Stripe::Checkout::Session.create(
+      payment_method_types: ['card'],
+      customer_email: current_user&.email,
+      line_items: [{
+        name: @product.product_name,
+        description: @product.product_description,
+        amount: @product.product_price,
+        currency: 'aud',
+        quantity: 1
+      }],
+      payment_intent_data: {
+        metadata: {
+          user_id: current_user&.id,
+          product_id: @product.id
+        }
+      },
+      success_url: "#{root_url}/products/#{@product.id}",
+      cancel_url: "#{root_url}/products"
+    )
   end
 
   # GET /products/new page that allows creation of individual product

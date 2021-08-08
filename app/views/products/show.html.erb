@@ -16,6 +16,21 @@
       <strong>$ <%= @product.product_price %></strong>
     </h5>
     <br />
+    <% if current_user && @product.product_stock == false %>
+      <button class="specialbtn" disabled>
+        SOLD
+      </button>
+      <%= link_to "Contact Seller", root_path %>
+    <% elsif current_user && @product.product_stock == true %>
+      <button data-stripe="payment" class="specialbtn">
+        Buy Now: $<%= @product.product_price %>
+      </button>
+    <% else %>
+      <%= button_to "Login to buy", new_user_session_path, class:"specialbtn" %>
+    <% end %>
+    <br />
+    <br />
+    <br />
     <h6 class="productnav">
       <% if user_signed_in? %>
         <%= link_to "Edit #{@product.product_name}", edit_product_path(@product), :class=>'back' %>
