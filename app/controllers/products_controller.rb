@@ -20,7 +20,7 @@ class ProductsController < ApplicationController
       line_items: [{
         name: @product.product_name,
         description: @product.product_description,
-        amount: @product.product_price,
+        amount: @product.product_price * 100,
         currency: 'aud',
         quantity: 1
       }],
@@ -33,6 +33,11 @@ class ProductsController < ApplicationController
       success_url: "#{root_url}/products/#{@product.id}",
       cancel_url: "#{root_url}/products"
     )
+    
+    @session_id = session.id
+    puts "*******"
+    pp @session_id
+    puts "*******"
   end
 
   # GET /products/new page that allows creation of individual product
