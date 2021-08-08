@@ -1,0 +1,2 @@
+class TransactionsMailer < ApplicationMailer
+end

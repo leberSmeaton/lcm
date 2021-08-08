@@ -30,7 +30,7 @@ class ProductsController < ApplicationController
           product_id: @product.id
         }
       },
-      success_url: "#{root_url}/products/#{@product.id}",
+      success_url: "#{root_url}/success?title=#{@product.product_name}",
       cancel_url: "#{root_url}/products"
     )
     
