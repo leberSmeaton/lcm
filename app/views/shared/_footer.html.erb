@@ -1,11 +1,17 @@
 <nav class="footernavs">
-  <section class="footerproductimages">
-    <div>product image</div>
-    <div>product image</div>
-    <div>product image</div>
-    <div>product image</div>
+  <section>
+    <div class="footerproductimages">
+      <% @sample_products.each do |product| %>
+        <%= link_to product do %>
+          <%= image_tag image_select(product), class:"footerproductimg" %>
+        <% end %>
+      <% end %>
+    </div>
   </section>
-  <ul class="city">
+  <ul>
+    <li><%= link_to "Sitemap", root_path %></li>
+    <li><a href="https://github.com/leberSmeaton/lcm">Repo</a></li>
+    <li><a href="www.linkedin.com/in/bella-leber-smeaton">LinkedIn</a></li>
     <li><a href="www.facebook.com">Facebook</a></li>
     <li><a href="www.instagram.com">Instagram</a></li>
     <li><a href="www.twitter.com">Twitter</a></li>

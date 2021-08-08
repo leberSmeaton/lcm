@@ -18,6 +18,7 @@
 body {
   box-sizing: border-box;
   color: slategray;
+  margin: 15px;
 }
 
 h2,
@@ -31,7 +32,7 @@ p {
   flex-flow: row wrap;
   justify-content: space-between;
   align-items: flex-end;
-  margin: 10px 5px 0 5px;
+  margin-bottom: 10px;
   border-bottom: 1px solid greenyellow;
   h1 {
     display: flex;
@@ -46,8 +47,8 @@ p {
   }
   li {
     display: inline;
-    margin: 0 10px;
     font-weight: normal;
+    margin: 0 10px;
     a {
       color: slategrey;
       &:hover {
@@ -72,15 +73,13 @@ main {
 .footernavs {
   display: flex;
   flex-flow: column wrap;
-  // justify-content: flex-end;
-  // align-items: flex-end;
-  margin: 100px 5px 0 5px;
+  margin-top: 100px;
   border-top: 1px solid greenyellow;
   ul {
     padding: 0;
     display: flex;
     justify-content: flex-end;
-    margin: 0;
+    // margin-right: 15px;
     li {
       display: inline;
       margin: 0 10px;
@@ -93,16 +92,36 @@ main {
       }
     }
   }
+  div.footersignup {
+    display: flex;
+    flex-wrap: row wrap;
+    justify-content: space-between;
+    align-content: center;
+    text-align: left;
+    padding: 20px 40px;
+    width: 50vw;
+    border-radius: 10px;
+    background-color: lightyellow;
+    h6 {
+      margin: 0;
+    }
+    button.getstartedbtn {
+      background-color: pink;
+      font-weight: bolder;
+      border: none;
+      padding: 5px 8px;
+      border-radius: 5px;
+    }
+  }
   .footerproductimages {
     display: flex;
     flex-wrap: row wrap;
     justify-content: space-between;
-    // align-items: center;
-    div {
-      margin: 10px;
+    margin: 15px;
+    .footerproductimg {
       width: 100px;
       height: 100px;
-      background-color: lightgrey;
+      object-fit: cover;
     }
   }
 }
