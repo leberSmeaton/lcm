@@ -8,9 +8,12 @@ class TransactionsController < ApplicationController
     transaction_id = params[:data][:object][:payment_intent]
     transaction = Stripe::PaymentIntent.retrieve(transaction_id)
     pp transaction
+
     product_id = transaction.metadata.product_id
-    buyer_id = transaction.metadata.user_id
+    user_id = transaction.metadata.user_id
     Product.find(product_id).update(product_stock: false)
+
+    Transaction.create(product_id: product_id, user_id: user_id)
   end
 
   def create

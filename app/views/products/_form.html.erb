@@ -9,7 +9,7 @@
     <%= f.association :category, collection: @categories.map {|c| [c.category_name, c.id]} %>
     <%= f.input :product_name %>
     <%= f.input :product_description %>
-    <%= f.input :product_price %>
+    <%= f.input :product_price, step: "0.01" %>
     <%= f.input :product_stock, as: :radio_buttons, label: "Product in stock?" %>
     <%= f.file_field :product_image, class:"form-control" %>
   </div><br />

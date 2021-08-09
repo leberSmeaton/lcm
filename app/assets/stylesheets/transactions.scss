@@ -25,3 +25,39 @@
     }
   }
 }
+#transactionlist {
+  display: flex;
+  flex-direction: column;
+  p {
+    margin: 15px 0 0 0;
+    padding: 0;
+  }
+  .transactionlistcontainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-self: center;
+    text-align: center;
+    padding: 5px;
+    .transactionitem {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      border: 1px solid darkolivegreen;
+      border-radius: 10px;
+      padding: 10px 10px;
+      margin-top: 10px;
+      text-align: left;
+      .transactionimg {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+      }
+      ul {
+        list-style: none;
+        margin: 0;
+        padding-left: 15px;
+      }
+    }
+  }
+}

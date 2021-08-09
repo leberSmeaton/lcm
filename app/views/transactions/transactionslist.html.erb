@@ -1,26 +1,28 @@
 <br/>
 <h2>Create that side hustle!</h2>
 <main id="transactionlist">
-    <h2><%#= @user.fullname %>'s Transaction History</h2>
-    <div>
-        <h4>Name of Product</h4>
+  <h2><%= current_user.fullname %>'s Transaction History</h2>
+
+  <article class="transactionlistcontainer">
+    <% current_user.purchased_products.each do |product| %>
+      <div>
+        <p>
+          #id: <%= product.id %><br />
+          15/08/2021 <%= product.created_at %>
+        </p>
+      </div>
+      <div class="transactionitem">
+        <div>
+          <%= image_tag product.product_image, class:"transactionimg" %>
+        </div>
         <ul>
-            <li>bought on this date</li>
-            <li>for this much money</li>
+          <li><strong>Product Purchased: <%= product.product_name %></strong></li><br />
+          <li>Product Info: <%= product.product_description %></li><br />
+          <li>Total Cost: <%= product.product_price %></li><br />
+          <li>Deliver to: <%= current_user.fullname %></li>
+          <li>Delivery Address: <%#= current_user.address_street %>, <%#= current_user.address_state %></li>
         </ul>
-    </div>
-    <div>
-        <h4>Name of Product</h4>
-        <ul>
-            <li>bought on this date</li>
-            <li>for this much money</li>
-        </ul>
-    </div>
-    <div>
-        <h4>Name of Product</h4>
-        <ul>
-            <li>bought on this date</li>
-            <li>for this much money</li>
-        </ul>
-    </div>
+      </div>
+    <% end %>
+  </article>
 </main>

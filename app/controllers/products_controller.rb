@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
       line_items: [{
         name: @product.product_name,
         description: @product.product_description,
-        amount: @product.product_price * 100,
+        amount: @product.product_price,
         currency: 'aud',
         quantity: 1
       }],
