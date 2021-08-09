@@ -1,14 +1,14 @@
 # app/views/order_mailer/new_order_email.text.erb
 
-You got a new transaction from <%= @transaction.name %>!
+You got a new transaction from <%= @buyer.fullname %>!
 ===============================================
 
 Order Details:
 --------------------------
 
-Name: <%= @transaction.name %>
-Email: <%= @transaction.email %>
-Address: <%= @transaction.address %>
+Name: <%= @product.product_name %>
+Transaction Date: <%= DateTime.now %>
+Email: <%= @buyer.email %>
+Address: <%= @buyer.address.address_street %>
 
-Message:
-<%= @transaction.message %>
+Message: "Thanks for your order"

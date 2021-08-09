@@ -2,28 +2,22 @@
 <h2>New Transcation Details</h2>
 <main>
   <p>
-    You got a new order from <%= @transaction.name %>!
+    You got a new order from <%#= @transaction.name %>!
   </p>
 
   <p>
     Order details<br>
     --------------------------
   </p>
-  <p>
-    Name: <%= @transaction.name %>
-  </p>
-  <p>
-    Email: <%= @transaction.email %>
-  </p>
-  <p>
-    Address: <%= @transaction.address %>
-  </p>
-  <p>
-    Message:<br>
+ 
+Name: <%= @product.product_name %>
+Transaction Date: <%= DateTime.now %>
+Email: <%= @buyer.email %>
+Address: <%= @buyer.address.address_street %>
     ----------
   </p>
   <p>
-    <%= @transaction.message %>
+    <%#= @transaction.message %>
   </p>
 
 </main>

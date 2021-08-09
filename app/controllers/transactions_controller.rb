@@ -11,21 +11,14 @@ class TransactionsController < ApplicationController
 
     product_id = transaction.metadata.product_id
     user_id = transaction.metadata.user_id
-    Product.find(product_id).update(product_stock: false)
+    
+    @product = Product.find(product_id)
+    @product.update(product_stock: false)
+    
+    @seller = User.find(@product.user_id)
+    @buyer = User.find(user_id)
 
-    Transaction.create(product_id: product_id, user_id: user_id)
-  end
-
-  def create
-    @transaction = Transaction.new(transaction_params)
-    if @transaction.save
-      TransactionMailer.with(transaction: @transaction).new_transaction_email.deliver_later
-
-      flash[:success] = "Thank you for your transaction! We'll contact you soon!"
-      redirect_to root_path
-    else
-      flash.now[:error] = "Your transaction had some errors. Please check the form and resubmit."
-      render :new
-    end
+    @transaction = Transaction.create(product_id: product_id, user_id: user_id)
+    TransactionsMailer.with(seller: @seller, product: @product, buyer: @buyer).new_transaction_email.deliver_later
   end
 end

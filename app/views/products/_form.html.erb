@@ -3,15 +3,13 @@
   <%= f.error_notification %>
   <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
-  <div class="form-inputs field">
-    <%# <%= f.association :user %> 
-    <%# <%= f.association :category, as: :select, @categories.map {|c| [c.category_name, c.id]} %>
+  <div>
     <%= f.association :category, collection: @categories.map {|c| [c.category_name, c.id]} %>
     <%= f.input :product_name %>
     <%= f.input :product_description %>
     <%= f.input :product_price, step: "0.01" %>
     <%= f.input :product_stock, as: :radio_buttons, label: "Product in stock?" %>
-    <%= f.file_field :product_image, class:"form-control" %>
+    <%= f.file_field :product_image, class:"smallproductimage" %>
   </div><br />
 
 
