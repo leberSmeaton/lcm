@@ -64,6 +64,22 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
+  # config/environments/production.rb
+
+  config.action_mailer.delivery_method = :smtp
+  host = 'localhost:3000' 
+  config.action_mailer.default_url_options = { :host => 'localhost:3000', protocol: 'http' }
+
+  # SMTP settings for gmail
+  config.action_mailer.smtp_settings = {
+    :address              => "smtp.gmail.com",
+    :port                 => 587,
+    :user_name            => <gmail_username>,
+    :password             => <gmail_password>,
+    :authentication       => "plain",
+    :enable_starttls_auto => true
+  }
+
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
   # config.action_mailer.raise_delivery_errors = false

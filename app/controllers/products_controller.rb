@@ -1,6 +1,7 @@
 class ProductsController < ApplicationController
   before_action :set_product, only: %i[ show edit update destroy ]
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :authorise_user, only: [:edit, :update, :destroy]
   before_action :set_categories, only: [:new, :edit]
 
 
@@ -104,4 +105,12 @@ class ProductsController < ApplicationController
       # this find params doesn't work, gets can't find params id
       # @categories = Category.find(params[:id])
     end
+
+    def authorise_user
+      if current_user.id != @product.user.id
+        flash[:error] = "Sorry - You can't do that."
+        redirect_to product_path
+      end
+    end
+
 end
