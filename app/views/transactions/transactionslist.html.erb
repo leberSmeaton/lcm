@@ -20,7 +20,7 @@
           <li>Product Info: <%= product.product_description %></li><br />
           <li>Total Cost: <%= product.product_price %></li><br />
           <li>Deliver to: <%= current_user.fullname %></li>
-          <li>Delivery Address: <%= product.user.address.address_street %>, <%#= current_user.address_state %></li>
+          <li>Delivery Address: <%#= product.user.address.address_street %>, <%#= current_user.address_state %></li>
         </ul>
       </div>
     <% end %>

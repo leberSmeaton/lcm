@@ -141,8 +141,6 @@ Users can be a buyer, seller or both.
 | PostgreSQL           |           |         |                |
 | Amazon S3            |           |         |                |
 | Heroku               |           |         |                |
-| Cloudinary           |           |         |                |
-|                      |           |         |                |
 
 </br>
 
