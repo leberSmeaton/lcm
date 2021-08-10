@@ -4,6 +4,6 @@ class TransactionsMailer < ApplicationMailer
         @buyer = params[:buyer]
         @product = params[:product]
         
-        mail(to: @seller.email, subject: "Someone bought #{@product.product_name}!")
+        mail(to: gcam012113@coderacademy.edu.au, subject: "Someone bought #{@product.product_name}!")
     end
 end

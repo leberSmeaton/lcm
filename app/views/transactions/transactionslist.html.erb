@@ -7,8 +7,8 @@
     <% current_user.purchased_products.each do |product| %>
       <div>
         <p>
-          #id: <%= Transaction.find_by(product_id: product.id).id %><br />
-          <%= Transaction.find_by(product_id: product.id).created_at  %>
+          #id: <%#= Transaction.find_by(product_id: product.id).id %><br />
+          <%#= Transaction.find_by(product_id: product.id).created_at  %>
         </p>
       </div>
       <div class="transactionitem">

@@ -67,7 +67,7 @@ class ProductsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /products/1 does not render a page
+  # PATCH/PUT /products/1 edits and does not render a page
   def update
     respond_to do |format|
       if @product.update(product_params)

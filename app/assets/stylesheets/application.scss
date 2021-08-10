@@ -21,10 +21,27 @@ body {
   margin: 15px;
 }
 
+h1,
 h2,
+h3,
+h4,
+h5,
 h5,
 p {
   padding-left: 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Amatic SC", cursive;
+}
+
+h1,
+h2 {
+  font-weight: bolder;
 }
 
 .headernavs {
