@@ -5,22 +5,17 @@
 
   <article class="transactionlistcontainer">
     <% current_user.purchased_products.each do |product| %>
-      <div>
-        <p>
-          #id: <%#= Transaction.find_by(product_id: product.id).id %><br />
-          <%#= Transaction.find_by(product_id: product.id).created_at  %>
-        </p>
-      </div>
       <div class="transactionitem">
         <div>
           <%= image_tag product.product_image, class:"transactionimg" if product.product_image? %>
         </div>
         <ul>
           <li><strong>Product Purchased: <%= product.product_name %></strong></li><br />
-          <li>Product Info: <%= product.product_description %></li><br />
-          <li>Total Cost: <%= product.product_price %></li><br />
-          <li>Deliver to: <%= current_user.fullname %></li>
-          <li>Delivery Address: <%#= product.user.address.address_street %>, <%#= current_user.address_state %></li>
+          <li>Date Purchased: <%= product.created_at %></li>
+          <li>Product Info: <%= product.product_description %></li>
+          <li>Total Cost: $<%= product.product_price / 100 %></li><br />
+          <li>To arrange online delivery please contact artist directly, </li>
+          <li>Artist Info: <%= product.user.fullname %> | <%= product.user.email %></li>
         </ul>
       </div>
     <% end %>

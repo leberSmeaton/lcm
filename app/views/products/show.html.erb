@@ -5,16 +5,18 @@
     <%= image_tag image_select(@product), class:"productimage" %>
   </section>
   <section class="productinfo">
-    <h5>
+    <h4>
       <strong><%= @product.product_name %></strong> | <%= @product.category.category_name %><br /><br />
+    </h4>
+    <p>
       <%= @product.product_description %><br /><br />
       <% if @product.product_stock == true %>
         Available
         <% else %>
         Unavailable
       <% end %><br />
-      <strong>$ <%= @product.product_price %></strong>
-    </h5>
+      <strong>$ <%= @product.product_price / 100 %></strong>
+    </p>
     <br />
     <% if current_user && @product.product_stock == false %>
       <button class="specialbtn" disabled>
