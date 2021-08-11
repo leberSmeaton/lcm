@@ -167,20 +167,41 @@ Users can be a buyer, seller or both.
 
   - Clarissa has done all her puzzles, watched ALL the good films on netflix and just CANT read another book. She wants to find a creative activity that taps in her natural artistic abilities.
     ![Photo of Clarissa](./app/assets/images/readme/clarissa.jpg)
-    Clarissa couldn't find anything on eBay or Amazon that wasn't mass produced or made by local Melburian artists, then came across VIC gov iniative Lockdown MArketplace. Clarissa lands on the HOME page and decides to read up on the About page. There is the option to sign up, log in or see all the product. As Clarissa isn't a user yet, she clicks through to the Sign Up page. <br/>
-
-  <br/>
+    Clarissa couldn't find anything on eBay or Amazon that wasn't mass produced or made by local Melburian artists, then came across VIC gov iniative Lockdown MArketplace. Clarissa lands on the HOME page and decides to read up on the About page. There is the option to sign up, log in or see all the product. Clarissa decides to browse the products before she decides to make a purcahse. <br/>
+    Viewing all the products, Clarissa decides on a Collage Kit and on click is directed to the dedicated product page which lists all the important information. The product is available and $10, bargain but as Clarissa isn't a user yet so it doesn't give her the option to 'Buy Now' rather to Log in to buy. <br/>
+    The Log In page has a link to the Sign Up page which take
+    Clarissa signs up as a user and is redirected to the HOME page. (This is an area that the UX/UI could be improved.) Clarissa heads back to the index page of all products, selects a product, goes through the stripe payment process. When Clarissa hits the tranaction success page she clicks through to check her transaction details are all accurate.
+    <br/>
+    ![Photo of Clarissa](./app/assets/images/readme/clarissauserstory.png)
+    <br/><br/>
 
 ### R13 **Wireframes**
 
-![First Wireframe](./app/assets/images/readme/wireframe1.png)
-
-- Wireframe Iteration
-  ![Wireframe Iteration](./app/assets/images/readme/wireframe1.png)
+HOME | root | GET | / <br/>
+![First Wireframe](./app/assets/images/readme/homew.png)
+<br/>ABOUT | about | GET | /about<br/>
+![First Wireframe](./app/assets/images/readme/aboutw.png)
+<br/>ALL PRODUCTS | products | GET | /products <br/>
+![First Wireframe](./app/assets/images/readme/allproductsw.png)
+<br/>EDIT PRODUCT | edit_product | GET | /products/:id/edit<br/>
+![First Wireframe](./app/assets/images/readme/editproductsw.png)
+<br/>NEW PRODUCT | new_product | GET | /products/new<br/>
+![First Wireframe](./app/assets/images/readme/newproductsw.png)
+<br/>PRODUCT | product | GET | /products/:id<br/>
+![First Wireframe](./app/assets/images/readme/productw.png)
+<br/>PRODUCT EDIT | edit_product | GET | /products/:id/edit<br/>
+![First Wireframe](./app/assets/images/readme/producteditw.png)
+<br/>SIGN IN | user_session | POST | /users/sign_in<br/>
+![First Wireframe](./app/assets/images/readme/signinw.png)
+<br/>SIGN UP | new_user_registration | GET | /users/sign_up <br/>
+![First Wireframe](./app/assets/images/readme/signupw.png)
 
 ### R14 <!-- An ERD for your app -->
 
-- picture
+- Initial ERD
+  ![Wireframe Iteration](./app/assets/images/readme/)
+- ERD iteration for 12/08/'21
+  ![Wireframe Iteration](./app/assets/images/readme/)
 
 ### R15 <!-- Explain the different high-level components (abstractions) in your app -->
 
