@@ -6,8 +6,8 @@
   <article class="transactionlistcontainer">
     <% current_user.purchased_products.each do |product| %>
       <div class="transactionitem">
-        <div>
-          <%= image_tag product.product_image, class:"transactionimg" if product.product_image? %>
+        <div class="productid-#{product.id}">
+          <%= image_select product.product_image, class:"transactionimg" %>
         </div>
         <ul>
           <li><strong>Product Purchased: <%= product.product_name %></strong></li><br />
