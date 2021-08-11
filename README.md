@@ -133,29 +133,40 @@ Users can be a buyer, seller or both.
 | Ruby                 | Postman   | VS Code | Discord        |
 | Rails                |           |         | Balsamiq       |
 | Sass                 |           |         | Drawio         |
-| PostgreSQL           |           |         |                |
+| PostgreSQL           |           |         | Google Fonts   |
 | Amazon S3            |           |         |                |
 | Heroku               |           |         |                |
 
 </br>
 
-### R12 <!-- User stories for your app -->
+### R12 **User Stories**
 
 - **User Seller:** Sam Cambell, Comedian.
 
   - Selling: trivia and online interactive stand up.
+    ![Photo of Sam](./app/assets/images/readme/sam.jpg)
+    CREATE new product
+    | HTTP method | CRUD Operation |
+    |---|---|
+    | POST | Create |
+    ![Sam Sitemap](./app/assets/images/readme/lcm-SitemapSam.png)
 
 - **User Seller & Buyer:** Tantri George, Ceramicist.
 
   - Ceramicist: selling potting kits with option to buy online interactive class.
+    ![Photo of Tantri](./app/assets/images/readme/tantri.png)
 
 - **User Buyer:** Clarissa McGreggor.
-  - Mother wanting to find a creative activity for child, collage
+  - Mother wanting to find a creative activity for herself and her kid(s).
   - 35-45 yo person looking looking for a laugh and misses the MSO.
+    ![Photo of Clarissa](./app/assets/images/readme/clarissa.jpg)
 
 ### R13 <!-- Wireframes for your app -->
 
-- picture
+![First Wireframe](./app/assets/images/readme/)
+
+- Wireframe Iteration
+  ![Wireframe Iteration](./app/assets/images/readme/)
 
 ### R14 <!-- An ERD for your app -->
 
