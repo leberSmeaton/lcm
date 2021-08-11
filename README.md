@@ -143,30 +143,40 @@ Users can be a buyer, seller or both.
 
 - **User Seller:** Sam Cambell, Comedian.
 
-  - Selling: trivia and online interactive stand up.
+  - Selling: online interactive comedy trivia.
     ![Photo of Sam](./app/assets/images/readme/sam.jpg)
-    CREATE new product
-    | HTTP method | CRUD Operation |
-    |---|---|
-    | POST | Create |
+    Sam is a stand up comedian who's lost all his income for most part of the year due to the comedy festivals country wide being cancelled. <br/>
+    Sam wants to sell a new comedy experience, Zoom Comedy Trivia. A trivia night mixed in with his stand up routine. He hopes a taster like this comedy trivia will interest customers to go to future shows. <br/>
+    Sam is already logged in due to the cookie session remembering his previous login details.
+    He goes straight to SELL to POST/Create a new product of which he has the ability to add a: Category name, Product name, Product description, the price of the session, if the product is available in stock and attach an associated image. <br/>
+    When the image is created we are directed to the products SHOW page presenting the information Sam entered. Sam has control and authorisation to edit his own products. <br/>
+    Sam is satisfied with his product and awaits purchase to organise with the customer the when and where outside of the platform.
     ![Sam Sitemap](./app/assets/images/readme/lcm-SitemapSam.png)
 
 - **User Seller & Buyer:** Tantri George, Ceramicist.
 
-  - Ceramicist: selling potting kits with option to buy online interactive class.
+  - Ceramicist: selling potting that comes with pre recorded online class.
     ![Photo of Tantri](./app/assets/images/readme/tantri.png)
+    Tantri has a booming business that can barely keep up but her shop is now closed. Providing kits with a pre recorded class is a quick and easy way for her to keep an income coming through. Whilst Tantri already has her own personal business website having her kits in a central creative marketplace is a great way to expand her customer base. <br/>
+    Tantri arrives at the home page and clicks to Log In, where she is redirected back to HOME. Tantri wants to delete a product that isn't performing well and isn't breaking even, her Perfect Pottery class.<br/>
+    After heading to ALL PRODUCTS page which indexes all products, Tantri is only authorised to edit and delete her own products. Selecting DELETE on Perfect Pottery Tantri is prompted to reconfirm her decision. The class has been permanently deleted as her product and the destroyed from the database. <br/>
+    Before Tantri signs out, she wants to purchase something from her fellow creatives from the MTC breakdancing theatre troupe. The family will learn a Tik Tok dance together. From ALL PRODUCTS Tantri clicks on the card which display SHOWS the singular product and clicks buy now. Buy now directs to Stripe payment page, which she fills out and directs Tantri to a transaction success. Tantri is sent a personal email detailing the success of transaction.
+    ![Photo of Tantri](./app/assets/images/readme/tantriuserstory.png)
 
-- **User Buyer:** Clarissa McGreggor.
-  - Mother wanting to find a creative activity for herself and her kid(s).
-  - 35-45 yo person looking looking for a laugh and misses the MSO.
+- **User Buyer:** Clarissa Smith.
+
+  - Clarissa has done all her puzzles, watched ALL the good films on netflix and just CANT read another book. She wants to find a creative activity that taps in her natural artistic abilities.
     ![Photo of Clarissa](./app/assets/images/readme/clarissa.jpg)
+    Clarissa couldn't find anything on eBay or Amazon that wasn't mass produced or made by local Melburian artists, then came across VIC gov iniative Lockdown MArketplace. Clarissa lands on the HOME page and decides to read up on the About page. There is the option to sign up, log in or see all the product. As Clarissa isn't a user yet, she clicks through to the Sign Up page. <br/>
 
-### R13 <!-- Wireframes for your app -->
+  <br/>
 
-![First Wireframe](./app/assets/images/readme/)
+### R13 **Wireframes**
+
+![First Wireframe](./app/assets/images/readme/wireframe1.png)
 
 - Wireframe Iteration
-  ![Wireframe Iteration](./app/assets/images/readme/)
+  ![Wireframe Iteration](./app/assets/images/readme/wireframe1.png)
 
 ### R14 <!-- An ERD for your app -->
 
