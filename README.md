@@ -14,7 +14,7 @@
 
 </br>
 
-[Image Screenshot of App]
+![Image of Home Page](./app/assets/images/readme/Lcm_home.png)
 
 </br>
 
@@ -35,14 +35,9 @@ Whilst larger marketplaces exist they are incredibly broad and not artist centri
 
 We need to provide income opportunities to those who've lost their jobs during the pandemic. By creating a platform that can future-proof by getting artists thinking of their craft 'out-side-the-box', 'outside-of-the-gallery', 'out-side-of-the-theatre', may help them generate a new income field.
 
-LCM has an easy to use Seller upload feature to sell kits or experiences.
-
 The categories are built around interactivity and experiences rather than products and static items. Such as online 'Trivia' hosted by local comedians, and 'Pottery' kits created and guided by Melbourne ceramicists.
 
 ### **R9 / R10:** Developer Contact
-
-<!-- link (URL) to your deployed app (i.e. website)-->
-<!--A link to your GitHub repository (repo).-->
 
 [Lockdown Creatives Marketplace](https://bellas-lcm.herokuapp.com/) </br>
 [GitHub Repo](https://github.com/leberSmeaton/lcm) </br>
@@ -50,36 +45,37 @@ The categories are built around interactivity and experiences rather than produc
 
 ### **R11:** About this app <!--Description of your marketplace app (website), including:-->
 
-**Purpose:** To provide a platform for users to both purchase and sell interactive art experiences and kits.
+**Purpose:** To provide a platform for users to both purchase and sell interactive creative art experiences and kits.
 
 Customers have access to another level of artistic and performative enterprise from the artist by method of zoom class, google hangout comedy show, or collage cut-n-paste online session.
 
 **Functionality / features:**
 
 - Users can create a profile on sign up.
-
-- Users can sign in, sign out.
-
-- Create a profile on sign up.
-
+  ![Lockdown Marketplace Sign Up Page](./app/assets/images/readme/signup.png)
+- Users can Log in.
+  ![Lockdown Marketplace Log In Page](./app/assets/images/readme/login.png)
+- Users can Log Out with User Session Deleted.
+  ![Lockdown Marketplace Sign Out Successful Message](./app/assets/images/readme/signout.png)
+- View Products & Product
+  ![Lockdown Marketplace Product List](./app/assets/images/readme/productlistnoedit.png)
+  ![Lockdown Marketplace Product Detail](./app/assets/images/readme/productdetail.png)
+  ![Lockdown Marketplace Product](./app/assets/images/readme/product.png)
+- Logged In Users have authorisation to Edit and Delete their products. Assign products to categories and provide stock availability.
+  ![Lockdown Marketplace Product Edit](./app/assets/images/readme/productedit.png)
 - Sell Products
-
-- Allocate Products to categories
-
-- Buy Now
-
-- auto email ect
+  ![Lockdown Marketplace Product List](./app/assets/images/readme/productlist.png)
+- View Previous Transactions
+  ![Lockdown Marketplace User Transaction List](./app/assets/images/readme/transactionhistory.png)
+  <br />
 
 **Sitemap:**
-picture
-
-**Screenshots:**
-picture
+![Site Map of Lockdown MArketplace](./app/assets/images/readme/lcm-Sitemap.png)
 
 **Target audience:**
 Users can be a buyer, seller or both.
 
-- _User buyer & seller:_ Artist/Creatives. Male & Female. Between 25-45. 70k+
+- **_User buyer & seller:_** Artist/Creatives.Between 25-45. 70k+
 
   - Kasia Kerr. 31. Footscray. Graphic Designer, who owns her own business. Partnered with no children. Owns a rescue dog.
   - Mindful. A purchase has to be more than a want, but a need that will benefit mind, body, soul.
@@ -90,11 +86,10 @@ Users can be a buyer, seller or both.
   - **Frustrations:**
     - Browsing across websites and marketplaces to find something unique, creative and well designed.
     - Having multiple sites/marketplaces hosting products not dedicated to her craft.
-  - **Goals:**
-    - Have one dedicated marketplace for creatives to both sell and buy products.
-    - To easily give back and purchase products from creatives who've lucked out during lockdown.
+  - **Goals:** - Have one dedicated marketplace for creatives to both sell and buy products. - To easily give back and purchase products from creatives who've lucked out during lockdown.
+    <br /><br />
 
-- _User seller:_ Artist/Creatives. Male & Female. Between 25-45. 40-70k.
+- **_User seller:_** Artist/Creatives. Between 25-45. 40-70k.
 
   - Max Mike. 27. Fitzroy. Collage Artist, owns own business and shop front. Single, no children.
   - Lost primary income due to lockdown. Has inactive shop front for business.
@@ -107,9 +102,9 @@ Users can be a buyer, seller or both.
     - Wants a marketplace that is dedicated to the arts as to attract customers who are looking specifically for creative experiences.
   - **Goals:**
     - Make an income that can potentially roll into regular income after lockdown is over.
-    - Create new return customers by offering kits and online sessions.
+    - Create new return customers by offering kits and online sessions.<br /><br />
 
-- _User buyer:_ Middle to upper SES. Predominantly Female. Between 27-50. 70k+.
+- **_User buyer:_** Middle to upper SES. Predominantly Female. Between 27-50. 70k+.
 
   - Clarissa McGreggor. 42. Pasco Vale. Social Services, work has been cut to part time during lockdown. Married with baby. Has pets.
   - Considerate. Wants to help support others in need who've not been able to access gov support.
