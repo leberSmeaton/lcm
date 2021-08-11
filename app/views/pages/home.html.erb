@@ -12,9 +12,11 @@
       Lockdown Creatives is a Marketplace that aims to support artists, creatives and performers in lockdown by offering a new revenue stream.
     </h5>
     <div class="landing-buttons">
-    <button>
-      <%= link_to "SIGN UP", new_user_registration_path %>
-    </button>
+    <% if !user_signed_in? %>
+      <button>
+        <%= link_to "SIGN UP", new_user_registration_path %>
+      </button>
+    <% end %>
     <button>
       <%= link_to "SHOP NOW", products_path %>
     </button>

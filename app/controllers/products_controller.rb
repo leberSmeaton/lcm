@@ -112,5 +112,4 @@ class ProductsController < ApplicationController
         redirect_to product_path
       end
     end
-
 end

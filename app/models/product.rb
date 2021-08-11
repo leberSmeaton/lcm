@@ -8,6 +8,7 @@ class Product < ApplicationRecord
   before_save :replace_ebay
   before_save :convert_price_to_cents, if: :product_price_changed?
 
+
   private
   def remove_whitespace
     self.product_name = self.product_name.strip
