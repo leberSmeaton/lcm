@@ -1,10 +1,10 @@
 # Lockdown Creatives<br/>T2A2 - Marketplace Project
 
-[bellas-lcm.herokuapp.com](https://bellas-lcm.herokuapp.com)<br/>
+[bellas-lcm.herokuapp.com](https://bellas-lcm.herokuapp.com)</br>
 
 ##### _By Bella Leber-Smeaton_
 
-<br/>
+</br>
 
 #### Requirements:
 
@@ -143,6 +143,17 @@ Users can be a buyer, seller or both.
 
 </br>
 
+#### **Next Steps**
+
+- Further Normalise Data
+- Personalise User Sessions with 'Hello, "user's name"'
+- Tidy up transaction list further. Possibly create a new Orders model to provide user and buyer separate transaction information.
+- Add in Contact Messaging Service. If a product is unavailable, contact the Seller to ask questions and see if more will be available.
+- Search bar for searching for certain features or buzz words.
+- Build in Testing
+
+</br>
+
 ### R12 **User Stories**
 
 - **User Seller:** Sam Cambell, Comedian.
@@ -202,6 +213,8 @@ HOME | root | GET | / <br/>
 
 ### R14 <!-- An ERD for your app -->
 
+A ERD is a diagram that describes the relationships between entities. They are considered and created as a business tool as they are to be read to help summarise and help clarify the app in a business sense.
+
 - Initial ERD
   ![Wireframe Iteration](./app/assets/images/readme/initialerd.png)
 - Final ERD iteration for 12/08/'21
@@ -223,20 +236,98 @@ example of IaaS(infrastructure as a service): AWS, Microsoft Azure, Google Cloud
 
 ### R18 <!-- Discuss the database relations to be implemented in your applicaiton -->
 
-### R19 <!-- Provide your database scheme design -->
+### R19 **Database Schema Design** <!-- Provide your database scheme design -->
 
-- picture
+Blueprint for Lockdown Creatives database
+![Blue print for database](./app/assets/images/readme/schemadesign.png)
+
+The Database Schema is a 'blueprint' to build databases and a tool for database administrators and developers. A database schema describes how the data will be stored in the database tables. The schema does not show a visual relationships between tables but rather serves a purpose to accurately contain the data.
+
+![Database Schema as diagram](./app/assets/images/psqlimages/railsschema2.png)
+
+Here we can see how through the psql 'lcm_development' database the list of relations in the lcm-development database.</br>
+![List of Relations](./app/assets/images/psqlimages/lcm_relations_table.png)</br>
+The schema is listed in the Rails app as schema.rb. The schema.rb file by rule should never be altered, but rather when we migrate or add/update or delete through migrations we add or change the schema.</br>
+When we create a model/ create an active record we add to our schema and it adds the schema table to the psql database, as we see above. </br>
+Some gems and tools automatically generate schema tables for us, such as for Lockdown Creatives we used Devise to create our User schema. When we installed active storage it too created Active Storage Attachments and Active Storage Blobs.</br>
+At the bottom of the schema the foreign keys are listed, as the database schema doesn't define the relationships between tables, rather shows the entity relationships inside the individual schema tables.
+We will go through each schema table separately.</br>
+![Schema as presented in rails schema.rb](./app/assets/images/psqlimages/railsschema2.png)
+![Schema as presented in rails schema.rb](./app/assets/images/psqlimages/railsschema1.png)</br>
+
+</br> We'll see there are several important attributes that don't have null: false attached to them. These attributes need updating and migrations to improve the quality of the schema datasets. </br>
+We do this by rails db:drop dropping the database, performing the migrations on the following schemas to update their constraint to false. Then migrate and seed the database back. For example our migrations might look like this,
+</br>
+
+```rails
+class AddNullFalseToUsers < ActiveRecord::Migration[6.0]
+  def change
+    change_column_null :users, :users, :false
+  end
+end
+```
+
+</br>
+
+- **Users**</br>
+  To improve data quality we must update and create a new migration for User model 'username' and 'fullname' not null.
+  ![users schema](./app/assets/images/psqlimages/users_table.png)</br>
+  ![users schema](./app/assets/images/psqlimages/users.png)</br>
+
+- **Products**</br>
+  To improve data quality we must update and create a new migration for Products model 'product_name' and 'product_price' and 'product_stock' and 'product_image' as not null.
+  ![products schema](./app/assets/images/psqlimages/products_table.png)</br>
+  ![products schema](./app/assets/images/psqlimages/products.png)</br>
+
+- **Categories**</br>
+  To improve data quality we must update and create a new migration for Categories model 'category_name' as not null.
+  ![categories schema](./app/assets/images/psqlimages/categories_table.png)</br>
+  ![categories schema](./app/assets/images/psqlimages/categories.png)</br>
+
+- **Addresses**</br>
+  To improve data quality we must update and create a new migration for Addresses model 'address_street', 'address_state', 'address_country', 'address_postcode' as not null.
+  ![addresses schema](./app/assets/images/psqlimages/addresses_table.png)</br>
+  ![addresses schema](./app/assets/images/psqlimages/addresses.png)</br>
+
+- **Transactions**</br>
+  Transactions schema joins the data from Users and Products to gather information when a product is purchased.
+  ![transactions schema](./app/assets/images/psqlimages/transactions_table.png)</br>
+  ![transactions schema](./app/assets/images/psqlimages/transactions.png)</br>
+
+- **Active Storage**</br>
+  Active storage is how we store our image files for Lockdown Creatives. These images aren't stored locally but their data record is stored in psql.</br>
+  ![active storage schemas](./app/assets/images/psqlimages/active_storage_attachments_table.png)</br>
+  ![active storage schemas](./app/assets/images/psqlimages/active_storage_attachments.png)</br>
+  ![active storage schemas](./app/assets/images/psqlimages/active_storage_blobs_table.png)</br>
+  ![active storage schemas](./app/assets/images/psqlimages/active_storage_blobs.png)</br>
+
+- **Other PSQL tables that aren't schema listed in the app**</br>
+  ![meta data and schema migrations](./app/assets/images/psqlimages/schema_migrations.png)</br>
+  ![meta data and schema migrations](./app/assets/images/psqlimages/metadata_table.png)</br>
 
 ### R20 <!-- Describe the way tasks are allocated and tracked in your project. -->
 
 [LC Marketplace project management](https://trello.com/b/XdQVSKMA/lcm-marketplace)
-![Trello Project Management 1](./app/assets/images/projectmanagement/pm1.png)</br>
-![Trello Project Management 2](./app/assets/images/projectmanagement/pm2.png)</br>
-![Trello Project Management 3](./app/assets/images/projectmanagement/pm3.png)</br>
-![Trello Project Management 4](./app/assets/images/projectmanagement/pm4.png)</br>
-![Trello Project Management 5 final](./app/assets/images/projectmanagement/pm5.png)</br>
-</br></br>
+</br>
+The majority of tickets represented a R category from the Assignment. Tickets included both requirements and rubric information. Additionally setting the following helped track tickets and stay on track,
+
+- Checklists for iterations of tickets such as ERD(which required iteration).
+- Colour coding to visualise certain sections of the assignment requirements. Such as a requirements R1-6 in yellow to discern from requirements R7-20 and optional prink extras of O1-6.
+- Using due dates to set 'sprints' to get work down in short time frames.
+- Labels to highlight super important tickets.
+- 'Sprinkles' Optional extras that I might want to add or if I have enough time finish implementing.
+  </br>
+  ![Trello Project Management 1](./app/assets/images/projectmanagement/pm1.png)</br>
+  ![Trello Project Management 2](./app/assets/images/projectmanagement/pm2.png)</br>
+  ![Trello Project Management 3](./app/assets/images/projectmanagement/pm3.png)</br>
+  ![Trello Project Management 4](./app/assets/images/projectmanagement/pm4.png)</br>
+  ![Trello Project Management 5 final](./app/assets/images/projectmanagement/pm5.png)</br>
+  </br></br>
 
 ---
 
 Thank-you
+
+```
+
+```
