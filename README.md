@@ -247,14 +247,37 @@ A ERD is a diagram that describes the relationships between entities. They are c
     ![Stripe](./app/assets/images/readme/stripe5.png)</br>
     When we show our product we initiate the stripe session. This isn't good practice, as when ever we visit a product it will kick in the stripe session. Soemthing we'll have to work on in our next sprint. At the end we can see when we get a successful stripe payment we are redirecting to our successurl page which is specific to stripe as to ensure no one can fudge a successful payment.
     ![Stripe](./app/assets/images/readme/stripe6.png)</br>
-  - **Gmail as active Mailer** is a Saas solution we use to send successful transaction details to our buyer and seller. Action Mailer is also a gem. We ensure our Mailer email and password are hidden in our rails credentials editor.
+  - **Gmail as active Mailer** is a Saas solution we use to send successful transaction details to our buyer and seller. Action Mailer is also a gem. We ensure our Mailer email and password are hidden in our rails credentials editor. When we install action mailer and set it up it acts like a controller for our transactions to be sent to our users.
+    When we set out new_transaction_email we're setting new variabels for our seller and buyer. We can use these now accross our transactions and maielrs.
+    ![Gmail Action Mailer](./app/assets/images/readme/mailer1.png)</br>
+    Our template that is sent to successful purchases.
+    ![Gmail Action Mailer](./app/assets/images/readme/mailer2.png)</br>
+    The Seller has received an email stating someone has purchased their product.
+    ![Gmail Action Mailer](./app/assets/images/readme/mailer3.png)</br>
   - There is future opportunity to work with Salesforce as a Customer Relationship Management solution.
 - PaaS (platform as a Service):
+
   - **Heroku** for deployment. Heroku integrates with Git workflow as well as many other tools. It allows us to quickly deploy, build and manage a scaleable app.
-    ![Heroku](./app/assets/images/readme/)
+    Heroku is like git and managed through the command line. We have to ensure we are conencted and logged in to push and deploy.
+
+    ```
+    git add .
+    git commit -m"This is a meaningful message. I love Lockdown Creatives."
+    git push heroku main
+    ```
+
+    ![Heroku](./app/assets/images/readme/heroku1.png)
+    The Heroku admin dashboard via their website is great and offers many tools such as deployment build logs and a built in console. We can also add buildpacks through heroku and link important Rails authorisation keys.
+    ![Heroku](./app/assets/images/readme/heroku2.png)
+
 - IaaS(infrastructure as a service):
   - **Amazon S3** for image hosting as it offers highly scalable, secure data cloud storage. We ensure our Amazon key credentials are hidden in our rails credentials editor. As it is widely used Rails has a lot of Amazon tools accessible and just needs to be uncommented in our storage.yml, and in our config>environments>development/production.rb, aswell as installed for active storage access.
-    ![Stripe](./app/assets/images/readme/storage.png)</br>
+    ![Amazon S3](./app/assets/images/readme/storage.png)</br>
+    We need to be sure that our Active Storeage is changed in our config>environments>development / production.rb is changed from :local to :amazon so we don't accidently fill our ®ails storage folder with images.  
+    ![Amazon S3](./app/assets/images/readme/amazon1.png)</br>
+    AWS offers many services such as S3 which lockdown creatives uses as image data storage. Image databases are non relational NoSQL but we can still link through Active Storage through our own PSQL database to the S3 cloud storage.
+    We can see we've set up a non public bucket for the lcm marketplace app specific for the Asia Pacific Region that covers Melbourne and the east coast.
+    ![Amazon S3](./app/assets/images/readme/amazon2.png)</br>
 
 </br>
 
@@ -347,7 +370,8 @@ The majority of tickets represented a R category from the Assignment. Tickets in
   ![Trello Project Management 2](./app/assets/images/projectmanagement/pm2.png)</br>
   ![Trello Project Management 3](./app/assets/images/projectmanagement/pm3.png)</br>
   ![Trello Project Management 4](./app/assets/images/projectmanagement/pm4.png)</br>
-  ![Trello Project Management 5 final](./app/assets/images/projectmanagement/pm5.png)</br>
+  Final Sprint on the home stretch.
+  ![Trello Project Management 5 final](./app/assets/images/projectmanagement/pm6.png)</br>
   </br></br>
 
 ---
