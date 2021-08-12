@@ -449,7 +449,3 @@ The majority of tickets represented a R category from the Assignment. Tickets in
 ---
 
 Thank-you
-
-```
-
-```
