@@ -283,7 +283,67 @@ A ERD is a diagram that describes the relationships between entities. They are c
 
 ### R17 + R18 **Database Relations** <!-- Describe your projects models in terms of the relationships (active record associations) they have with each other --> <!-- Discuss the database relations to be implemented in your applicaiton -->
 
-</br>
+- **Lockdown Creatives Marketplace database Relations**
+  List of relation table schemas in the Lockdown Creatives database.
+  ![User Relations](./app/assets/images/relations/lcm_relations.png)
+  </br>
+- **Schema Foreign Key Relations**
+  We can see at the bottom of the schema.rb the lists of foreign keys that have been generated with model and devise, including active storage during its install.
+  ![schema Relations](./app/assets/images/relations/schema_relations.png)
+  </br>
+- **User Relations**
+  The User relationships are between products, address, transaction. We use transactions as a join table represent purchased products Seller and Buyer users.
+  We can see that...
+  - User has_many :products
+  - User has_one :address making it unique to that user
+  - User has_many :transactions that we show the many transactions on the transaction history page.
+  - we also have purchased products through transaction. Which isn't a schema of it's own, rather identifyies the join between the transaction schema. Which we'll look at below.=
+    ![User Relations](./app/assets/images/relations/user_relations.png)
+    </br>
+    ![User Relations](./app/assets/images/relations/user.png)
+    </br>
+- **Products Relations**
+  The products relationships are between the user, category, transactions and active storage models.
+  we can see that...
+  - Product belongs_to :user and that User has_many :products. The product is only dependent on the user being created. If the user is destroyed we can see that the product too is destroyed.
+  - PRoduct belongs_to :category and can only have one category assigned to it. A category on the other hand can have optional one to many product inside it.
+  - Product has_many :transactions associated to it. And we use the transaction table to join the prodcut on successful purchase back to the user. In the user table we can see has_many purchased_products, through: :transactions.
+  - PRoduct has_one_attached :product_image, which is represented by active storage and it's ataive storage attachement.  
+    ![Products Relations](./app/assets/images/relations/products_relations.png)
+    </br>
+    ![Products Relations](./app/assets/images/relations/products1.png)
+    </br>
+- **Addresses Relations**
+  The addresses relationships are between user and address.
+  - Address belongs_to :user. It is a one to one relationship. An Address is dependent on the user and if the user is destroyed, so too the address.
+    ![Addresses Relations](./app/assets/images/relations/addresses_relations.png)
+    </br>
+    ![address Relations](./app/assets/images/relations/user_address.png)
+    </br>
+- **Category Relations**
+  The category relationships are between the product and category.
+  - A category has_many :products, an optional one or many products. A category can by empty of products, it can be empty. A product belongs_to one category.
+    ![Category Relations](./app/assets/images/relations/categorys_relations.png)
+    </br>
+    ![Category Relations](./app/assets/images/relations/product_category.png)
+    </br>
+    Here we can see the 'collage' category on display for it's specific product.
+    ![Category detail](./app/assets/images/relations/productdetail.png)
+    </br>
+    We loop through the categories in a special simple form selection through association.
+    ![Category detail](./app/assets/images/relations/formrelations.png)
+    </br>
+- **Transactions Relations**
+  The transactions relationships are between user and products and transactions.
+  - Transactions is a join table for users and has it's own relationships, user has_many purchased_products, through: :transactions.
+  - transactions belongs_to user and belongs_to products.
+    ![Transactions Relations](./app/assets/images/relations/transactions_relations.png)
+    </br>
+    ![transactions Relations](./app/assets/images/relations/transactions.png)
+    </br>
+    Here we can a mix of user and product information on display because of the relatinoships we've built throught the join table.
+    ![transactions page](./app/assets/images/relations/transactionhistory.png)
+    </br>
 
 ### R19 **Database Schema Design** <!-- Provide your database scheme design -->
 
