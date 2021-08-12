@@ -223,18 +223,44 @@ A ERD is a diagram that describes the relationships between entities. They are c
   - Generating a Profile model, removing profile information out of User and linking a foreign key to the User table, adding info if the user is also an artist.
   - Feature table that lists features that the products have for better understanding of what the products offer such as: 'kid friendly', 'online', 'kit', 'all-bodies'.
     ![Wireframe Iteration](./app/assets/images/readme/futureerd.png)
+    </br>
 
-### R15 <!-- Explain the different high-level components (abstractions) in your app -->
+### R15 **High Level Components** <!-- Explain the different high-level components (abstractions) in your app -->
 
-### R16 <!-- Detail any third party services that your app will use -->
+</br>
 
-examples of SaaS (software-as-a-Service): are Google Suite, O365, Salesforce.
-examples of PaaS (platform as a Service, where they provide cloud-based location where organisations can build software without worrying about maintenance like operating systems, software updates, storage, ect) are: Google App Engine, Apache Stratos, Force.com, SAP cloud Platform.
-example of IaaS(infrastructure as a service): AWS, Microsoft Azure, Google Cloud, IBM Cloud, Oracle Cloud.
+### R16 **Third Party Services** <!-- Detail any third party services that your app will use -->
 
-### R17 <!-- Describe your projects models in terms of the relationships (active record associations) they have with each other -->
+- SaaS (software-as-a-Service):
+  - **Stripe** is a software as a service tool that itegrates with Rails applications. Stripe</br>
+    ![Stripe](./app/assets/images/readme/stripe1.png)</br>
+    We ensure our Stripe key credentials are hidden in our rails credentials editor.
+    ![Stripe](./app/assets/images/readme/stripe2.png)</br>
+    Our Rails submit buttons are even smart enough to understand that our button is a data-stripe payment.
+    ![Stripe](./app/assets/images/readme/stripe4.png)</br>
+    We use a little bit of JavaScript in the head of the application.html.erb and down the bottom of the page after the body of content that we need stipe to be accessible from.
+    ![Stripe](./app/assets/images/readme/stripe3.png)</br>
+    In our webhook is like the create for our Stripe transaction. it communicates between Stripe and our app.
+    Here we can see we are creating a transaction_id variable that contains the data, object payment intent.
+    When we create a @transaction we are creating the transaction that called the Stripe Payment intent and it's transaction_id parameters.
+    With this informatoin we can link it to our Transactions Mailer which will email the user and buyer. See Gmail Saas belwo.
+    ![Stripe](./app/assets/images/readme/stripe5.png)</br>
+    When we show our product we initiate the stripe session. This isn't good practice, as when ever we visit a product it will kick in the stripe session. Soemthing we'll have to work on in our next sprint. At the end we can see when we get a successful stripe payment we are redirecting to our successurl page which is specific to stripe as to ensure no one can fudge a successful payment.
+    ![Stripe](./app/assets/images/readme/stripe6.png)</br>
+  - **Gmail as active Mailer** is a Saas solution we use to send successful transaction details to our buyer and seller. Action Mailer is also a gem. We ensure our Mailer email and password are hidden in our rails credentials editor.
+  - There is future opportunity to work with Salesforce as a Customer Relationship Management solution.
+- PaaS (platform as a Service):
+  - **Heroku** for deployment. Heroku integrates with Git workflow as well as many other tools. It allows us to quickly deploy, build and manage a scaleable app.
+    ![Heroku](./app/assets/images/readme/)
+- IaaS(infrastructure as a service):
+  - **Amazon S3** for image hosting as it offers highly scalable, secure data cloud storage. We ensure our Amazon key credentials are hidden in our rails credentials editor. As it is widely used Rails has a lot of Amazon tools accessible and just needs to be uncommented in our storage.yml, and in our config>environments>development/production.rb, aswell as installed for active storage access.
+    ![Stripe](./app/assets/images/readme/storage.png)</br>
 
-### R18 <!-- Discuss the database relations to be implemented in your applicaiton -->
+</br>
+
+### R17 + R18 **Database Relations** <!-- Describe your projects models in terms of the relationships (active record associations) they have with each other --> <!-- Discuss the database relations to be implemented in your applicaiton -->
+
+</br>
 
 ### R19 **Database Schema Design** <!-- Provide your database scheme design -->
 
