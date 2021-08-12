@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :products
+  has_many :products, dependent: :destroy
   has_one :address, dependent: :destroy
   has_many :transactions
   has_many :purchased_products, through: :transactions, source: :product

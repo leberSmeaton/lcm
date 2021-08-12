@@ -1,6 +1,10 @@
 # Lockdown Creatives<br/>T2A2 - Marketplace Project
 
-##### _By Bella Leber-Smeaton_ </br></br>
+[bellas-lcm.herokuapp.com](https://bellas-lcm.herokuapp.com)<br/>
+
+##### _By Bella Leber-Smeaton_
+
+<br/>
 
 #### Requirements:
 
@@ -29,7 +33,7 @@ When COVID-19 entered our lives LCM found two major problems that needed solving
 - "We were bored, locked down in our homes and often lacking a creative outlet, all out of ideas or just looking to have some fun."</br> _What are new and fun ways to entertain ourselves in a creative way during lockdown?_ </br> **AND** </br> _How can we best support our arts and entertainment industry?_ </br>
   Many users looking to buy creative kits or artistic experiences don't know where to look as large scale marketplaces don't cater for spatial or conceptual entertainment or art.
 
-### **R8:** Why is it a problem that needs solving? <!-- Why is it a problem that needs solving? -->
+### **R8:** Why is it a problem that needs solving?
 
 Whilst larger marketplaces exist they are incredibly broad and not artist centric or built to aid creative entertainment.
 
@@ -45,9 +49,11 @@ The categories are built around interactivity and experiences rather than produc
 
 ### **R11:** About this app <!--Description of your marketplace app (website), including:-->
 
-**Purpose:** To provide a platform for users to both purchase and sell interactive creative art experiences and kits.
+**Purpose:** To provide a platform where users can both purchase and sell interactive creative art experiences and kits. To provide a new resource for artists and creatives to generate income during lockdown.
 
-Customers have access to another level of artistic and performative enterprise from the artist by method of zoom class, google hangout comedy show, or collage cut-n-paste online session.
+Lockdown Creatives marketplace offers a centralised hub for artistic and creative kits, as well as a higher level of artistic and performative enterprise from the artist by method of zoom class, google hangout comedy show, or collage cut-n-paste online session.
+
+NB: Depending on product requirements, after payment Coordination of dates between buyer and seller are done independently of the app.<br/>
 
 **Functionality / features:**
 
@@ -121,8 +127,6 @@ Users can be a buyer, seller or both.
     - Give back to the industry she loves most, arts & entertainment. Particularly to artists and performers Clarissa loves most.
 
 </br>
-
-<!-- Tech stack (e.g. html, css, deployment platform, etc) -->
 
 #### **Tech Stack**
 
@@ -199,9 +203,13 @@ HOME | root | GET | / <br/>
 ### R14 <!-- An ERD for your app -->
 
 - Initial ERD
-  ![Wireframe Iteration](./app/assets/images/readme/)
-- ERD iteration for 12/08/'21
-  ![Wireframe Iteration](./app/assets/images/readme/)
+  ![Wireframe Iteration](./app/assets/images/readme/initialerd.png)
+- Final ERD iteration for 12/08/'21
+  ![Wireframe Iteration](./app/assets/images/readme/finalerd.png)
+- **Ideas** for Futher Normalisation And Future Database Iteration options that we'd like to next explore include:
+  - Generating a Profile model, removing profile information out of User and linking a foreign key to the User table, adding info if the user is also an artist.
+  - Feature table that lists features that the products have for better understanding of what the products offer such as: 'kid friendly', 'online', 'kit', 'all-bodies'.
+    ![Wireframe Iteration](./app/assets/images/readme/futureerd.png)
 
 ### R15 <!-- Explain the different high-level components (abstractions) in your app -->
 
@@ -222,15 +230,11 @@ example of IaaS(infrastructure as a service): AWS, Microsoft Azure, Google Cloud
 ### R20 <!-- Describe the way tasks are allocated and tracked in your project. -->
 
 [LC Marketplace project management](https://trello.com/b/XdQVSKMA/lcm-marketplace)
-
-Start of week 1:
-[picture]</br>
-End of week 1:
-[picture]</br>
-End of week 2:
-[picture]</br>
-End of week 3:
-[picture]
+![Trello Project Management 1](./app/assets/images/projectmanagement/pm1.png)</br>
+![Trello Project Management 2](./app/assets/images/projectmanagement/pm2.png)</br>
+![Trello Project Management 3](./app/assets/images/projectmanagement/pm3.png)</br>
+![Trello Project Management 4](./app/assets/images/projectmanagement/pm4.png)</br>
+![Trello Project Management 5 final](./app/assets/images/projectmanagement/pm5.png)</br>
 </br></br>
 
 ---
