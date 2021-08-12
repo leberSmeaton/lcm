@@ -227,7 +227,15 @@ A ERD is a diagram that describes the relationships between entities. They are c
 
 ### R15 **High Level Components** <!-- Explain the different high-level components (abstractions) in your app -->
 
-</br>
+- **Action Pack:** is our request and response support team and handles the MVC framework of the app. We use the action pack to help define controllers that implement actions in order to define and render our views. Within Rails we're only ever interacting with the Action Controller part of the action pack, where as its other part Action Dispatch is triggered by default in request response and renders action view.
+- **Active Model:** is our interface with the Model of the Model View Controller. It allows our Action pack to interact with Ruby objects.
+- **Active Record:** helps us associate our classes to our database so we can pull data to and from it. For example our migrations use ActiveRecord to update, change, add and destory data and attributes from our schema table and psql database.
+  HEre we can see we can defining class change where we want to add a column specifically called addproductimagetoproducts to our :products table. The column is caled :product_image and it will take a :string
+  ![ActiveRecord Example](./app/assets/images/readme/activerecord.png)
+- Action Mailer:
+- Active Support:
+
+  </br>
 
 ### R16 **Third Party Services** <!-- Detail any third party services that your app will use -->
 
